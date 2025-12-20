@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather Monitor</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <h1>Прогноз погоды</h1>
+  <p class="author">by vlad_zyu</p>
+
+  <div class="control-panel">
+    <div class="input-wrapper">
+      <input type="text" id="cityInput" placeholder="Введите город..." autocomplete="off">
+      <div id="suggestions" class="suggestions"></div>
+      <div id="cityError" class="error"></div>
+    </div>
+  </div>
+
+  <button id="refresh">Обновить данные</button>
+
+  <div id="error" class="error"></div>
+  <div id="weatherContainer" class="weather-container"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
