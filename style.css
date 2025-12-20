@@ -1,0 +1,127 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #eef6f1;
+}
+
+.app {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.author {
+  text-align: center;
+  font-size: 13px;
+  color: #4b7f5c;
+  margin-bottom: 20px;
+}
+
+.control-panel {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.input-wrapper {
+  position: relative;
+  flex: 1;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #9ccfb1;
+  border-radius: 6px;
+}
+
+button {
+  padding: 10px 14px;
+  background: #2ecc71;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+button:hover {
+  background: #27ae60;
+}
+
+.error {
+  color: #1e8449;
+  margin-bottom: 10px;
+}
+
+.weather-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.weather-card {
+  background: #ffffff;
+  padding: 16px 20px;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  position: relative;
+}
+
+.weather-card h2 {
+  margin: 0 0 10px;
+  font-size: 18px;
+}
+
+.delete-btn {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  padding: 5px 10px;
+  background: #58d68d;
+  border: none;
+  color: #145a32;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.delete-btn:hover {
+  background: #2ecc71;
+}
+
+.day-forecast {
+  margin-top: 8px;
+  border-top: 1px solid #e8f5e9;
+  padding-top: 6px;
+  font-size: 14px;
+}
+
+.suggestions {
+  position: absolute;
+  top: 42px;
+  left: 0;
+  right: 0;
+  background: white;
+  border: 1px solid #c8e6c9;
+  border-radius: 6px;
+  display: none;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 10;
+}
+
+.suggestion-item {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.suggestion-item:hover {
+  background: #e9f7ef;
+}
