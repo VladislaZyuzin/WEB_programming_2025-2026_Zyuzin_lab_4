@@ -42,8 +42,9 @@ h1 {
 }
 
 .controls {
+  margin: 1rem 0;
   display: flex;
-  gap: 10px;
+  justify-content: center;
 }
 
 .btn {
@@ -123,6 +124,10 @@ main {
   display: block;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
+
+/* .add-city-section.active {
+  display: block;
+} */
 
 .add-city-section h2 {
   color: #1976d2;
