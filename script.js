@@ -381,7 +381,7 @@ function displayWeatherData(daily, container) {
   const grid = document.createElement('div');
   grid.className = 'weather-grid';
   
-  const daysToShow = Math.min(3, daily.time.length);
+  const daysToShow = Math.min(7, daily.time.length);
   
   for (let i = 0; i < daysToShow; i++) {
     const card = createWeatherCard(daily, i);
