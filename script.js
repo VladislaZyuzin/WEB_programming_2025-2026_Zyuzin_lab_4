@@ -1,27 +1,3 @@
-const elements = {
-  currentWeather: document.getElementById('currentWeather'),
-  loader: document.getElementById('loader'),
-  globalError: document.getElementById('globalError'),
-  addCitySection: document.getElementById('addCitySection'),
-  cityInput: document.getElementById('cityInput'),
-  cityError: document.getElementById('cityError'),
-  suggestions: document.getElementById('suggestions'),
-  citiesList: document.getElementById('citiesList'),
-  refreshBtn: document.getElementById('refreshBtn'),
-  addCityBtn: document.getElementById('addCityBtn')
-};
-
-const STORAGE_KEY = 'weatherAppData';
-const GEOCODING_API = 'https://geocoding-api.open-meteo.com/v1/search';
-const WEATHER_API = 'https://api.open-meteo.com/v1/forecast';
-
-let state = {
-  current: null,
-  cities: []
-};
-
-let searchTimeout = null;
-
 function init() {
   loadStateFromStorage();
   setupEventListeners();
@@ -381,7 +357,7 @@ function displayWeatherData(daily, container) {
   const grid = document.createElement('div');
   grid.className = 'weather-grid';
   
-  const daysToShow = Math.min(7, daily.time.length);
+  const daysToShow = Math.min(3, daily.time.length);
   
   for (let i = 0; i < daysToShow; i++) {
     const card = createWeatherCard(daily, i);
