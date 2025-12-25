@@ -1,50 +1,56 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Прогноз погоды</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="container">
+    <header>
+      <h1>Прогноз погоды</h1>
+      <p class="header-subtitle">Узнайте погоду в вашем городе</p>
+    </header>
 
-<header>
-  <h1>Прогноз погоды</h1>
-  <button id="refreshBtn">Обновить</button>
-</header>
+    <div class="controls">
+      <button id="refreshBtn" class="btn btn-primary">
+        🔄 Обновить
+      </button>
+    </div>
 
-<main>
-  <section id="locationSection">
-    <h2 id="locationTitle">Текущее местоположение</h2>
-    <div id="weatherContainer"></div>
-  </section>
+    <div id="loader" class="loader">
+      <div class="spinner"></div>
+      <p>Загрузка данных...</p>
+    </div>
 
-<section id="addCitySection">
-  <h3>Добавить город</h3>
+    <div id="globalError" class="error-message"></div>
 
-  <div class="add-city-form">
-    <input
-      type="text"
-      id="cityInput"
-      placeholder="Начните вводить город"
-      autocomplete="off"
-    />
-    <button id="addCityBtn">Узнать результат</button>
+    <div id="addCitySection" class="add-city-section">
+      <h2>Добавить город</h2>
+      <p class="section-description">
+        Введите название города для просмотра прогноза погоды
+      </p>
+      <div class="input-group">
+        <input 
+          type="text" 
+          id="cityInput" 
+          placeholder="Начните вводить название города..."
+          autocomplete="off"
+        >
+        <ul id="suggestions" class="suggestions"></ul>
+        <div id="cityError" class="input-error"></div>
+      </div>
+      <button id="addCityBtn" class="btn btn-primary btn-block">
+        Добавить город
+      </button>
+    </div>
+
+    <div id="currentWeather" class="weather-section"></div>
+
+    <div id="citiesList"></div>
   </div>
 
-  <ul id="suggestions"></ul>
-  <p class="error" id="cityError"></p>
-</section>
-
-  <section id="citiesSection">
-    <h3>Другие города</h3>
-    <div id="citiesList"></div>
-  </section>
-</main>
-
-<div id="loader" class="hidden">Загрузка...</div>
-<div id="globalError" class="error"></div>
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
