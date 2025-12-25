@@ -1,29 +1,40 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Weather Monitor</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <title>Прогноз погоды</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<div class="app">
+
+<header>
   <h1>Прогноз погоды</h1>
-  <p class="author">by vlad_zyu</p>
+  <button id="refreshBtn">Обновить</button>
+</header>
 
-  <div class="control-panel">
-    <div class="input-wrapper">
-      <input type="text" id="cityInput" placeholder="Введите город..." autocomplete="off">
-      <div id="suggestions" class="suggestions"></div>
-      <div id="cityError" class="error"></div>
-    </div>
-  </div>
+<main>
+  <section id="locationSection">
+    <h2 id="locationTitle">Текущее местоположение</h2>
+    <div id="weatherContainer"></div>
+  </section>
 
-  <button id="refresh">Обновить данные</button>
+  <section id="addCitySection" class="hidden">
+    <h3>Добавить город</h3>
+    <input type="text" id="cityInput" placeholder="Введите город" autocomplete="off" />
+    <ul id="suggestions"></ul>
+    <p class="error" id="cityError"></p>
+    <button id="addCityBtn">Добавить</button>
+  </section>
 
-  <div id="error" class="error"></div>
-  <div id="weatherContainer" class="weather-container"></div>
-</div>
+  <section id="citiesSection">
+    <h3>Другие города</h3>
+    <div id="citiesList"></div>
+  </section>
+</main>
+
+<div id="loader" class="hidden">Загрузка...</div>
+<div id="globalError" class="error"></div>
 
 <script src="script.js"></script>
 </body>
