@@ -7,18 +7,19 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <header>
+  <header>
+    <div class="header-content">
       <h1>Прогноз погоды</h1>
       <p class="header-subtitle">Узнайте погоду в вашем городе</p>
-    </header>
-
+    </div>
     <div class="controls">
       <button id="refreshBtn" class="btn btn-primary">
         🔄 Обновить
       </button>
     </div>
+  </header>
 
+  <main>
     <div id="loader" class="loader">
       <div class="spinner"></div>
       <p>Загрузка данных...</p>
@@ -49,7 +50,7 @@
     <div id="currentWeather" class="weather-section"></div>
 
     <div id="citiesList"></div>
-  </div>
+  </main>
 
   <script src="script.js"></script>
 </body>
