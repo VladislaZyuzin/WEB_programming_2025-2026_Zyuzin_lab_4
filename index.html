@@ -19,13 +19,22 @@
     <div id="weatherContainer"></div>
   </section>
 
-  <section id="addCitySection" class="hidden">
-    <h3>Добавить город</h3>
-    <input type="text" id="cityInput" placeholder="Введите город" autocomplete="off" />
-    <ul id="suggestions"></ul>
-    <p class="error" id="cityError"></p>
-    <button id="addCityBtn">Добавить</button>
-  </section>
+<section id="addCitySection">
+  <h3>Добавить город</h3>
+
+  <div class="add-city-form">
+    <input
+      type="text"
+      id="cityInput"
+      placeholder="Начните вводить город"
+      autocomplete="off"
+    />
+    <button id="addCityBtn">Узнать результат</button>
+  </div>
+
+  <ul id="suggestions"></ul>
+  <p class="error" id="cityError"></p>
+</section>
 
   <section id="citiesSection">
     <h3>Другие города</h3>
