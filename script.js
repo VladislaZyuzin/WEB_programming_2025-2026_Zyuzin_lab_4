@@ -1,3 +1,27 @@
+const elements = {
+  currentWeather: document.getElementById('currentWeather'),
+  loader: document.getElementById('loader'),
+  globalError: document.getElementById('globalError'),
+  addCitySection: document.getElementById('addCitySection'),
+  cityInput: document.getElementById('cityInput'),
+  cityError: document.getElementById('cityError'),
+  suggestions: document.getElementById('suggestions'),
+  citiesList: document.getElementById('citiesList'),
+  refreshBtn: document.getElementById('refreshBtn'),
+  addCityBtn: document.getElementById('addCityBtn')
+};
+
+const STORAGE_KEY = 'weatherAppData';
+const GEOCODING_API = 'https://geocoding-api.open-meteo.com/v1/search';
+const WEATHER_API = 'https://api.open-meteo.com/v1/forecast';
+
+let state = {
+  current: null,
+  cities: []
+};
+
+let searchTimeout = null;
+
 function init() {
   loadStateFromStorage();
   setupEventListeners();
