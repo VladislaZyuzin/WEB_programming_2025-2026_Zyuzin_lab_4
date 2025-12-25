@@ -114,7 +114,7 @@ async function handleCityInput(event) {
 
 async function searchCities(query) {
   try {
-    const url = `${GEOCODING_API}?name=${encodeURIComponent(query)}&count=10&language=ru&format=json`;
+    const url = ${GEOCODING_API}?name=${encodeURIComponent(query)}&count=10&language=ru&format=json;
     const response = await fetch(url);
     
     if (!response.ok) {
@@ -138,7 +138,7 @@ function displaySuggestions(cities) {
     const li = document.createElement('li');
     
     const cityName = document.createTextNode(
-      `${city.name}${city.admin1 ? ', ' + city.admin1 : ''}${city.country ? ', ' + city.country : ''}`
+      ${city.name}${city.admin1 ? ', ' + city.admin1 : ''}${city.country ? ', ' + city.country : ''}
     );
     
     li.appendChild(cityName);
@@ -157,7 +157,9 @@ function displaySuggestions(cities) {
 function handleSuggestionClick(city) {
   elements.cityInput.value = city.name;
   elements.cityInput.dataset.lat = city.latitude;
-  elements.cityInput.dataset.lon = city.longitude;
+atitude;
+  elements.cityInp
+ut.dataset.lon = city.longitude;
   elements.cityInput.dataset.selectedName = city.name;
   
   clearSuggestions();
@@ -319,7 +321,8 @@ function createWeatherHeader(locationName, isCurrent, cityIndex = null) {
   title.textContent = locationName;
   titleContainer.appendChild(title);
   
-  header.appendChild(titleContainer);
+  header.
+appendChild(titleContainer);
   
   if (!isCurrent && cityIndex !== null) {
     const deleteBtn = document.createElement('button');
@@ -354,7 +357,7 @@ async function loadAndDisplayWeather(lat, lon, container) {
   showLoader();
   
   try {
-    const url = `${WEATHER_API}?latitude=${lat}&longitude=${lon}&daily=temperature_2m_max,temperature_2m_min,weathercode,precipitation_sum,windspeed_10m_max&timezone=auto&forecast_days=7`;
+    const url = ${WEATHER_API}?latitude=${lat}&longitude=${lon}&daily=temperature_2m_max,temperature_2m_min,weathercode,precipitation_sum,windspeed_10m_max&timezone=auto&forecast_days=7;
     
     const response = await fetch(url);
     
@@ -406,7 +409,7 @@ function createWeatherCard(daily, index) {
   const tempMin = Math.round(daily.temperature_2m_min[index]);
   const tempMax = Math.round(daily.temperature_2m_max[index]);
   
-  tempContainer.textContent = `${tempMin}° / ${tempMax}°`;
+  tempContainer.textContent = ${tempMin}° / ${tempMax}°;
   card.appendChild(tempContainer);
   
   const details = document.createElement('div');
@@ -459,7 +462,8 @@ function formatDate(dateString) {
   }
   
   const options = { day: 'numeric', month: 'long', weekday: 'short' };
-  return date.toLocaleDateString('ru-RU', options);
+  return date.toLocaleDateString('ru-RU',
+options);
 }
 
 function getWeatherDescription(code) {
