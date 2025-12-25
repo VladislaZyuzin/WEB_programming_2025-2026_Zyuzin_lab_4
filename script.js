@@ -92,18 +92,42 @@ function renderWeather(daily, container) {
 
 function renderAll() {
   weatherContainer.innerHTML = "";
+  citiesList.innerHTML = "";
+  globalError.textContent = "";
+
   if (state.current) {
-    loadWeather(state.current.lat, state.current.lon, weatherContainer);
+    loadWeather(
+      state.current.lat,
+      state.current.lon,
+      weatherContainer
+    );
   }
 
-  citiesList.innerHTML = "";
-  state.cities.forEach(city => {
-    const div = document.createElement("div");
-    div.innerHTML = `<h4>${city.name}</h4>`;
-    const cont = document.createElement("div");
-    div.appendChild(cont);
-    citiesList.appendChild(div);
-    loadWeather(city.lat, city.lon, cont);
+  state.cities.forEach((city, index) => {
+    const block = document.createElement("div");
+    block.className = "city-block";
+
+    const header = document.createElement("div");
+    header.className = "city-header";
+
+    const title = document.createElement("h4");
+    title.textContent = city.name;
+
+    const delBtn = document.createElement("button");
+    delBtn.textContent = "❌";
+    delBtn.className = "delete-btn";
+    delBtn.onclick = () => removeCity(index);
+
+    header.appendChild(title);
+    header.appendChild(delBtn);
+
+    const weatherDiv = document.createElement("div");
+
+    block.appendChild(header);
+    block.appendChild(weatherDiv);
+    citiesList.appendChild(block);
+
+    loadWeather(city.lat, city.lon, weatherDiv);
   });
 }
 
