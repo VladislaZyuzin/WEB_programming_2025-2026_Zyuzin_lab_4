@@ -30,6 +30,7 @@ function init() {
   if (state.current || state.cities.length > 0) {
     renderAll();
   } else {
+    showAddCitySection();
     requestGeolocation();
   }
 }
